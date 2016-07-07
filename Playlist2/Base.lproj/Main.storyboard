@@ -154,6 +154,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xSz-cc-mOB" id="pwA-VA-Plo"/>
+                                    <outlet property="delegate" destination="xSz-cc-mOB" id="MiC-nh-56L"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

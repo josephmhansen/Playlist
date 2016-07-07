@@ -25,6 +25,10 @@ class PlaylistTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 //MARK: - ActionButtons
     
     @IBAction func addButtonTapped(sender: AnyObject) {
@@ -94,14 +98,26 @@ class PlaylistTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//        how are we getting there?
+        if segue.identifier == "toPlaylistDetailSegue" {
+            //        where to?
+            let songTVC = segue.destinationViewController as? SongTableViewController
+//            what do i need to take? where is it currently?
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let playlist = PlaylistController.sharedController.playlists[indexPath.row]
+//                did i arrive? did i bring it?
+                songTVC?.playlist = playlist
+                
+            }
+        }
+
+        
     }
-    */
+    
 
 }
