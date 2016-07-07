@@ -16,6 +16,7 @@
 		724F140B1D2EC79200CE9A4C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F140A1D2EC79200CE9A4C /* Song.swift */; };
 		724F140D1D2EC79A00CE9A4C /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F140C1D2EC79A00CE9A4C /* Playlist.swift */; };
 		724F14111D2ECDFE00CE9A4C /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F14101D2ECDFE00CE9A4C /* PlaylistController.swift */; };
+		724F14141D2EE94200CE9A4C /* SongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F14131D2EE94200CE9A4C /* SongController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		724F140A1D2EC79200CE9A4C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		724F140C1D2EC79A00CE9A4C /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		724F14101D2ECDFE00CE9A4C /* PlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
+		724F14131D2EE94200CE9A4C /* SongController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				724F14101D2ECDFE00CE9A4C /* PlaylistController.swift */,
+				724F14131D2EE94200CE9A4C /* SongController.swift */,
 			);
 			name = ModelController;
 			path = ..;
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724F14141D2EE94200CE9A4C /* SongController.swift in Sources */,
 				724F140B1D2EC79200CE9A4C /* Song.swift in Sources */,
 				724F13F51D2EB4A100CE9A4C /* AppDelegate.swift in Sources */,
 				724F14091D2EBFCC00CE9A4C /* SongTableViewController.swift in Sources */,
