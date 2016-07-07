@@ -9,6 +9,9 @@
 import Foundation
 
 class PlaylistController {
+    
+    static let sharedController = PlaylistController()
+    
     //CRUD (CREATE, READ, UPDATE, DELETE)
     //    READ
     var playlists: [Playlist] = []
