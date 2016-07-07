@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Playlist Table View Controller-->
         <scene sceneID="uX2-Oz-OOt">
             <objects>
-                <tableViewController id="72P-mz-YrU" sceneMemberID="viewController">
+                <tableViewController id="72P-mz-YrU" customClass="PlaylistTableViewController" customModule="Playlist2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Is-RM-p4H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -17,10 +17,10 @@
                             <rect key="frame" x="0.0" y="64" width="320" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hw0-ki-EPl">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hw0-ki-EPl">
                                     <rect key="frame" x="8" y="8" width="304" height="24"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gqw-gP-Ye6">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gqw-gP-Ye6">
                                             <rect key="frame" x="0.0" y="0.0" width="304" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -61,7 +61,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xSz-cc-mOB" kind="show" id="vai-Ip-uYK"/>
+                                    <segue destination="xSz-cc-mOB" kind="show" identifier="toPlaylistDetailSegue" id="vai-Ip-uYK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,8 +71,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="XVO-23-wuo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JVg-3b-t1d"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JVg-3b-t1d">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="72P-mz-YrU" id="Eip-ML-YPk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playlistTextField" destination="Gqw-gP-Ye6" id="0QE-hD-6UM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gX-Yr-qVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +88,7 @@
         <!--Title-->
         <scene sceneID="ePt-gN-C81">
             <objects>
-                <viewController id="xSz-cc-mOB" sceneMemberID="viewController">
+                <viewController id="xSz-cc-mOB" customClass="SongTableViewController" customModule="Playlist2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ceh-ve-Sdn"/>
                         <viewControllerLayoutGuide type="bottom" id="whI-Rk-aXW"/>
@@ -158,8 +165,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="uIb-me-4dA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QBD-Fg-Spd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QBD-Fg-Spd">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="xSz-cc-mOB" id="xH7-Og-LjU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="artistTextField" destination="ZQ5-Az-vcB" id="xwF-bC-fAJ"/>
+                        <outlet property="myTableView" destination="2LB-oe-Dad" id="trP-cm-7oT"/>
+                        <outlet property="songTextField" destination="Ayi-tV-7T8" id="0QL-JN-gSM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDS-gq-ZUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
